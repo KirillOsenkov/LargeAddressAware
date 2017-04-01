@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+      <id>LargeAddressAware</id>
+
+      <version>1.0.0</version>
+
+      <title>Large Address Aware - mark 32-bit .exe files as LARGEADDRESSAWARE using editbin.exe</title>
+      <authors>Kirill Osenkov</authors>
+      <owners>Kirill Osenkov</owners>
+      <licenseUrl>https://github.com/KirillOsenkov/LargeAddressAware/blob/master/LICENSE</licenseUrl>
+      <projectUrl>https://github.com/KirillOsenkov/LargeAddressAware</projectUrl>
+      <requireLicenseAcceptance>false</requireLicenseAcceptance>
+      <description>When the LargeAddressAware MSBuild property in a .csproj file is set to true, the tool will call editbin.exe /LARGEADDRESSAWARE on the output executable</description>
+      <summary>Allows to mark an .exe post-compilation as LARGEADDRESSAWARE by calling editbin.exe.</summary>
+      <tags>editbin LARGEADDRESSAWARE</tags>
+  </metadata>
+  <files>
+    <file src="editbin.exe" target="build" />
+    <file src="LargeAddressAware.targets" target="build" />
+  </files>
+</package>

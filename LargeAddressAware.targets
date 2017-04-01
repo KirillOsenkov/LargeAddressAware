@@ -9,7 +9,7 @@
           AfterTargets="CoreCompile"
           Condition="'$(LargeAddressAware)' == 'true' AND Exists('$(EditBin)')">
 
-    <Exec Command='"$(EditBin)" /LARGEADDRESSAWARE /NOLOGO "$(IntermediateAssembly)"' />
+    <Exec Command='"$(EditBin)" /LARGEADDRESSAWARE /NOLOGO "@(IntermediateAssembly)"' />
 
   </Target>
 

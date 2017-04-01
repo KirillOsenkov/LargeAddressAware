@@ -17,6 +17,8 @@
   </metadata>
   <files>
     <file src="editbin.exe" target="build" />
+    <file src="link.exe" target="build" />
+    <file src="link.exe.config" target="build" />
     <file src="LargeAddressAware.targets" target="build" />
   </files>
 </package>

@@ -5,7 +5,7 @@
 
       <version>1.0.0</version>
 
-      <title>Large Address Aware - mark 32-bit .exe files as LARGEADDRESSAWARE using editbin.exe</title>
+      <title>Large Address Aware</title>
       <authors>Kirill Osenkov</authors>
       <owners>Kirill Osenkov</owners>
       <licenseUrl>https://github.com/KirillOsenkov/LargeAddressAware/blob/master/LICENSE</licenseUrl>

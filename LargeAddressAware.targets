@@ -2,14 +2,14 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <EditBin>$(MSBuildThisFileDirectory)editbin.exe</EditBin>
+    <EditBin>$(MSBuildThisFileDirectory)SetLargeAddressAware.exe</EditBin>
   </PropertyGroup>
 
   <Target Name="SetLargeAddressAware"
           AfterTargets="CoreCompile"
           Condition="'$(LargeAddressAware)' == 'true' AND Exists('$(EditBin)')">
 
-    <Exec Command='"$(EditBin)" /LARGEADDRESSAWARE /NOLOGO "@(IntermediateAssembly)"' />
+    <Exec Command='"$(EditBin)" "@(IntermediateAssembly)"' />
 
   </Target>
 

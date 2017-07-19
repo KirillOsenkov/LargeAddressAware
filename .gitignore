@@ -250,3 +250,6 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+/SetLargeAddressAware.exe
+/SetLargeAddressAware.runtimeconfig.dev.json
+/SetLargeAddressAware.runtimeconfig.json

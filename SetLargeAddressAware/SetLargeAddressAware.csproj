@@ -1,9 +1,43 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net46</TargetFramework>
-    <OutDir>$(MSBuildProjectDirectory)\..</OutDir>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <BuildOutputTargetFolder>build</BuildOutputTargetFolder>
+    <PackageId>LargeAddressAware</PackageId>
+    <Version>1.0.2</Version>
+    <Authors>Kirill Osenkov</Authors>
+    <Company>Kirill Osenkov</Company>
+    <Description>Allows to mark an .exe post-compilation as LARGEADDRESSAWARE.
+      
+When the LargeAddressAware MSBuild property in a .csproj file is set to true, the tool will set the LARGEADDRESSAWARE flag on the output executable.</Description>
+    <PackageTags>editbin LARGEADDRESSAWARE</PackageTags>
+    <PackageLicenseUrl>https://github.com/KirillOsenkov/LargeAddressAware/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/KirillOsenkov/LargeAddressAware</PackageProjectUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="15.5.180" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LargeAddressAware.targets" Pack="true" PackagePath="build\" />
+  </ItemGroup>
 
 </Project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <!--
+      Full path to the assembly that contains the MSBuild task
+    -->
+    <LargeAddressAwareAssemblyFile Condition=" '$(LargeAddressAwareAssemblyFile)' == '' ">$(MSBuildThisFileDirectory)net46\SetLargeAddressAware.dll</LargeAddressAwareAssemblyFile>
+  </PropertyGroup>
+
+  <!--
+    To run this target, set the property LargeAddressAware to true in your project.
+    <PropertyGroup>
+      <LargeAddressAware>true</LargeAddressAware>
+    </PropertyGroup>
+    
+    The target only runs after CoreCompile so it is incremental and does not need Inputs/Outputs
+  -->
+  <Target Name="SetLargeAddressAware"
+          AfterTargets="CoreCompile"
+          Condition=" '$(LargeAddressAware)' == 'true' And Exists('$(LargeAddressAwareAssemblyFile)') And '$(OutputType)' == 'Exe' And '$(PlatformTarget)' == 'x86' ">
+
+    <SetLargeAddressAware FilePath="@(IntermediateAssembly)" />
+
+  </Target>
+
+  <UsingTask TaskName="SetLargeAddressAware"
+             AssemblyFile="$(LargeAddressAwareAssemblyFile)" />
+</Project>

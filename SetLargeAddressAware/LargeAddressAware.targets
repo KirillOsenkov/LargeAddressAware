@@ -18,7 +18,7 @@
   -->
   <Target Name="SetLargeAddressAware"
           AfterTargets="CoreCompile"
-          Condition=" '$(LargeAddressAware)' == 'true' And Exists('$(LargeAddressAwareAssemblyFile)') And '$(OutputType)' == 'Exe' And '$(PlatformTarget)' == 'x86' ">
+          Condition=" '$(LargeAddressAware)' == 'true' And Exists('$(LargeAddressAwareAssemblyFile)') And '$(TargetExt)' == 'dll' And '$(PlatformTarget)' == 'x86' ">
 
     <SetLargeAddressAware FilePath="@(IntermediateAssembly)" />
 

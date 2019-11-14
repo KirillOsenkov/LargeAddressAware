@@ -11,4 +11,4 @@ To use, install the NuGet package and set this property in your .csproj file:
   </PropertyGroup>
 ```
 
-Also make sure that the .targets file from the NuPkg is included in your build. To do this, build your project using http://msbuildlog.com and search for "LargeAddressAware" in the structured log.
+Also make sure that the .targets file from the NuPkg is included in your build. To do this, build your project using http://msbuildlog.com and search for `$target SetLargeAddressAware` in the structured log.

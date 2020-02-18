@@ -6,7 +6,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <BuildOutputTargetFolder>build</BuildOutputTargetFolder>
     <PackageId>LargeAddressAware</PackageId>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
     <Authors>Kirill Osenkov</Authors>
     <Company>Kirill Osenkov</Company>
     <Description>Allows to mark an .exe post-compilation as LARGEADDRESSAWARE.

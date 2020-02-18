@@ -15,10 +15,12 @@
     </PropertyGroup>
     
     The target only runs after CoreCompile so it is incremental and does not need Inputs/Outputs
+    
+    Do not execute during design-time builds, because the output assembly won't exist yet even though CoreCompile has "run".
   -->
   <Target Name="SetLargeAddressAware"
           AfterTargets="CoreCompile"
-          Condition=" '$(LargeAddressAware)' == 'true' And Exists('$(LargeAddressAwareAssemblyFile)') And ('$(OutputType)' == 'Exe' Or '$(OutputType)' == 'Winexe') And '$(PlatformTarget)' == 'x86' ">
+          Condition=" ( '$(DesignTimeBuild)' != 'true' And '$(BuildingProject)' == 'true' ) And '$(LargeAddressAware)' == 'true' And Exists('$(LargeAddressAwareAssemblyFile)') And ('$(OutputType)' == 'Exe' Or '$(OutputType)' == 'Winexe') And '$(PlatformTarget)' == 'x86' ">
 
     <SetLargeAddressAware FilePath="@(IntermediateAssembly)" />
 

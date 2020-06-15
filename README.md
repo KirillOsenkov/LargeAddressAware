@@ -12,3 +12,13 @@ To use, install the NuGet package and set this property in your .csproj file:
 ```
 
 Also make sure that the .targets file from the NuPkg is included in your build. To do this, build your project using http://msbuildlog.com and search for `$target SetLargeAddressAware` in the structured log.
+
+You can customize after which target the SetLargeAddressAware target runs by setting this property:
+
+```
+  <PropertyGroup>
+    <LargeAddressAwareAfterTargets>MyCustomTarget</LargeAddressAwareAfterTargets>
+  </PropertyGroup>
+```
+
+By default it runs after CoreCompile.

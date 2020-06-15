@@ -6,14 +6,14 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <BuildOutputTargetFolder>build</BuildOutputTargetFolder>
     <PackageId>LargeAddressAware</PackageId>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
     <Authors>Kirill Osenkov</Authors>
     <Company>Kirill Osenkov</Company>
     <Description>Allows to mark an .exe post-compilation as LARGEADDRESSAWARE.
       
 When the LargeAddressAware MSBuild property in a .csproj file is set to true, the tool will set the LARGEADDRESSAWARE flag on the output executable.</Description>
     <PackageTags>editbin LARGEADDRESSAWARE</PackageTags>
-    <PackageLicenseUrl>https://github.com/KirillOsenkov/LargeAddressAware/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/KirillOsenkov/LargeAddressAware</PackageProjectUrl>
   </PropertyGroup>
 

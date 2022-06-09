@@ -22,3 +22,14 @@ You can customize after which target the SetLargeAddressAware target runs by set
 ```
 
 By default it runs after CoreCompile.
+
+You can also customize which target assembly should be modified by setting this property:
+
+```
+  <PropertyGroup>
+    <LargeAddressAwareTargetAssembly>bin/$(Configuration)/$(AssemblyName).exe</LargeAddressAwareTargetAssembly>
+    <LargeAddressAwareAfterTargets>AfterBuild</LargeAddressAwareAfterTargets>
+  </PropertyGroup>
+```
+
+This is required in order to set the LargeAddressAware flag to .Net Core executables as otherwise the flag will be set to the application dll. Please note that the ``LargeAddressAwareAfterTargets`` setting must be set to a later build stage such as ``AfterBuild``.

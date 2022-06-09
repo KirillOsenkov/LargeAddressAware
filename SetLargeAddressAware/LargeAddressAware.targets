@@ -24,7 +24,7 @@
   -->
   <Target Name="SetLargeAddressAware"
           AfterTargets="$(LargeAddressAwareAfterTargets)"
-          Condition="('$(DesignTimeBuild)' != 'true' And '$(BuildingProject)' == 'true') And '$(LargeAddressAware)' == 'true' And Exists('$(LargeAddressAwareAssemblyFile)') And Exists('$(LargeAddressAwareTargetAssembly)') And ('$(OutputType)' == 'Exe' Or '$(OutputType)' == 'Winexe') And '$(PlatformTarget)' == 'x86' ">
+          Condition="('$(DesignTimeBuild)' != 'true' And '$(BuildingProject)' == 'true') And '$(LargeAddressAware)' == 'true' And Exists('$(LargeAddressAwareAssemblyFile)') And Exists('$(LargeAddressAwareTargetAssembly)') And ('$(OutputType)' == 'Exe' Or '$(OutputType)' == 'Winexe')">
 
     <SetLargeAddressAware FilePath="$(LargeAddressAwareTargetAssembly)" />
 

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net46</TargetFramework>
@@ -19,7 +19,7 @@ When the LargeAddressAware MSBuild property in a .csproj file is set to true, th
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="15.5.180" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.3.2" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>

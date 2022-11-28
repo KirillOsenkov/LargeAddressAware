@@ -1,7 +1,9 @@
 [![NuGet package](https://img.shields.io/nuget/v/LargeAddressAware.svg)](https://nuget.org/packages/LargeAddressAware)
 
 # LargeAddressAware
-A build tools package that adds support for making 32-bit exes LARGEADDRESSAWARE
+A build tools package that adds support for making 32-bit exes LARGEADDRESSAWARE.
+
+Note: if your .exe is AnyCPU (32-bit preferred or not), then you don't need this tool. These are large address aware already. This tool is strictly for .exes targeting x86 specifically.
 
 To use, install the NuGet package and set this property in your .csproj file:
 

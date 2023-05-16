@@ -19,7 +19,7 @@ When the LargeAddressAware MSBuild property in a .csproj file is set to true, th
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.3.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.5.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>

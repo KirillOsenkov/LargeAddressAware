@@ -1,27 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
+    <Version>1.0.7</Version>
     <TargetFramework>net472</TargetFramework>
-    <DebugType>embedded</DebugType>
-    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <BuildOutputTargetFolder>build</BuildOutputTargetFolder>
-    <PackageId>LargeAddressAware</PackageId>
-    <Version>1.0.6</Version>
-    <Authors>Kirill Osenkov</Authors>
     <Company>Kirill Osenkov</Company>
+    <Authors>Kirill Osenkov</Authors>
     <Description>Allows to mark an .exe post-compilation as LARGEADDRESSAWARE.
       
 When the LargeAddressAware MSBuild property in a .csproj file is set to true, the tool will set the LARGEADDRESSAWARE flag on the output executable.</Description>
+    <PackageId>LargeAddressAware</PackageId>
     <PackageTags>editbin LARGEADDRESSAWARE</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/KirillOsenkov/LargeAddressAware</PackageProjectUrl>
+    <DebugType>embedded</DebugType>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <BuildOutputTargetFolder>build</BuildOutputTargetFolder>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.6.3" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.9.5" PrivateAssets="All" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="Properties\Strings.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -29,16 +26,13 @@ When the LargeAddressAware MSBuild property in a .csproj file is set to true, th
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="Properties\Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
     <None Update="LargeAddressAware.targets" Pack="true" PackagePath="build\" />
   </ItemGroup>
-
 </Project>
